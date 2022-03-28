@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">GP</string>
+
+    <array name="sports">
+        <item>Football</item>
+        <item>Basketball</item>
+        <item>Volleyball</item>
+        <item>Tennis</item>
+        <item>Swimming</item>
+        <item>Climbing</item>
+        <item>Jumping</item>
+        <item>Running</item>
+    </array>
+
+    <array name="volunteer_work">
+        <item>Football</item>
+        <item>Basketball</item>
+        <item>Volleyball</item>
+        <item>Tennis</item>
+        <item>Swimming</item>
+        <item>Climbing</item>
+        <item>Jumping</item>
+        <item>Running</item>
+    </array>
+
+
+</resources>
