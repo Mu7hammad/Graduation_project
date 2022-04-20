@@ -1,19 +1,397 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     tools:context=".MainFragments.AboutFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About Fragment"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:background="@drawable/profile_bckgr"
+            app:elevation="0dp"
+            android:backgroundTint="@color/sub"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="عنا"
+                    android:textSize="@dimen/text_medium"
+                    android:textColor="@color/white"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:text="عنا"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:cardElevation="8dp"
+            android:layout_marginVertical="16dp"
+            app:cardCornerRadius="32dp"
+            android:background="@drawable/custom_cardview">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/title_1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="عن المعهد"/>
+
+                    <ImageView
+                        android:id="@+id/expand_btn_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_1"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="المعهد العالى لعلوم الحاسب ونظم المعلومات هو صرح تعليمى على ارض مصرية يخدم المجتمع المصري بتقديم خريج متميز فى تخصصات (علوم الحاسب - نظم المعلومات الادارية -ادارة الاعمال والمحاسبة)"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray"/>
+
+
+                <LinearLayout
+                    android:id="@+id/row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/title_2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="الرؤية"/>
+
+                    <ImageView
+                        android:id="@+id/expand_btn_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_2"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="يتطلع معهد علوم الحاسب ونظم المعلومات بالتجمع الخامس أن يكون معهداً رائداً على المستوى القومى والاقليمى في مجالات نظم المعلومات الادارية وعلوم الحاسب وأن يقدم خدمة مجتمعية متميزة للمجتمع والبيئة المحيطة."/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray"/>
+
+
+                <LinearLayout
+                    android:id="@+id/row3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/title_3"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="الرسالة"/>
+
+                    <ImageView
+                        android:id="@+id/expand_btn_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_3"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="يلتزم معهد علوم الحاسب ونظم المعلومات بالتجمع الخامس بإعداد خريج مزود بالمعارف والمهارات في مجالات نظم المعلومات الادارية وعلوم الحاسب التي تؤهله للمنافسة في سوق العمل محليا وأقليميا، وتقديم خدمات مجتمعية متميزة، وذلك في إطار القيم الإنسانية والأخلاقية."/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray"/>
+
+
+                <LinearLayout
+                    android:id="@+id/row4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="16dp"
+                    android:paddingHorizontal="16dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/title_4"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="الموقع"/>
+
+                    <ImageView
+                        android:id="@+id/expand_btn_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_4"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="20dp"
+                    android:text=" التجمع الخامس -امتداد مرتفعات الجولف - بعد جهاز المدينة"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:text="تواصل معنا"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:background="@drawable/custom_cardview"
+            android:elevation="8dp"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="التواصل الإجتماعي"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/facebook_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/facebook_icon"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/whatsapp_btn"
+                    android:layout_width="40dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/whatsapp_icon"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/youtube_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/youtube_icon"/>
+
+            </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="امسح كود QR"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/cis_qr"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/box_decoration"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="إتصل"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="32dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="19622"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_x_x_large"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/call_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="5dp"
+                android:layout_toStartOf="@id/tv"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_round_call_24"
+                app:tint="?attr/colorPrimary" />
+
+
+        </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="إيميل"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="32dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="info@cis.edu.ed"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_large"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_toStartOf="@+id/e"
+                    android:src="@drawable/ic_round_email_24"
+                    app:tint="?attr/colorPrimary" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

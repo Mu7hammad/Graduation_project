@@ -1,20 +1,330 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0"?>
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
+    android:id="@+id/scroll_view"
     android:layout_height="match_parent"
-    tools:context=".MainFragments.HomeFragment">
+    android:layoutDirection="rtl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            app:elevation="0dp"
+            android:backgroundTint="@color/sub"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="الرئيسيه"
+                    android:textSize="@dimen/text_medium"
+                    android:textColor="@color/white"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:background="@drawable/profile_bckgr"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_cardview"
+                android:elevation="8dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_undraw_male_avatar_323b"
+                    app:civ_border_color="@color/gray"
+                    app:civ_border_width="0.5dp" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="Mohammed"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_medium"/>
+
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/light_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/gpa_layout"
+                        android:background="?attr/selectableItemBackground"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:paddingVertical="15dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_toStartOf="@id/tt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="3dp"
+                                android:src="@drawable/ic_round_stars_24"
+                                app:tint="?attr/colorPrimary" />
+
+                            <View
+                                android:layout_width="3dp"
+                                android:layout_height="0dp"/>
+
+                            <TextView
+                                android:id="@+id/tt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:text="المعدل"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/gpa_value_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            tools:text="2.14"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray"/>
+
+                    <LinearLayout
+                        android:id="@+id/fees_layout"
+                        android:background="?attr/selectableItemBackground"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="15dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toStartOf="@id/t"
+                                android:layout_marginHorizontal="3dp"
+                                android:src="@drawable/ic_round_monetization_on_24"
+                                app:tint="?attr/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/t"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="المصاريف"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/fees_value_tv"
+                            android:layout_width="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            tools:text="500 جم"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardCornerRadius="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:padding="20dp"
+                        android:id="@+id/materials"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="75dp"
+                            android:padding="10dp"
+                            android:layout_gravity="center"
+                            app:civ_border_color="?attr/colorPrimary"
+                            app:civ_circle_background_color="?attr/colorPrimary"
+                            app:civ_border_width="10dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/round_import_contacts_white_18"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="المواد الدراسية"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray"/>
+
+                    <LinearLayout
+                        android:id="@+id/results"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:layout_width="0dp"
+                        android:padding="20dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="75dp"
+                            android:id="@+id/fees"
+                            android:padding="10dp"
+                            android:layout_gravity="center"
+                            app:civ_border_color="?attr/colorPrimary"
+                            app:civ_circle_background_color="?attr/colorPrimary"
+                            app:civ_border_width="10dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/round_beenhere_white_18"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="النتائج"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/today_lectures_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="محاضرات اليوم"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/black"/>
+
+        <ProgressBar
+            android:id="@+id/lectures_progress"
+            android:indeterminateTint="?attr/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="50dp"/>
+
+        <TextView
+            android:id="@+id/nothing_lectures_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="لا توجد محاضرات"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginVertical="50dp"/>
+
+        <com.example.graduationproject.Others.NonScrollListView
+            android:layout_width="match_parent"
+            android:dividerHeight="8dp"
+            android:listSelector="@android:color/transparent"
+            android:visibility="gone"
+            android:layout_marginVertical="16dp"
+            android:divider="@color/transparent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_view"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

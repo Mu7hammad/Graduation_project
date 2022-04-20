@@ -1,6 +1,7 @@
 package com.example.graduationproject.MainActivities;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +14,13 @@ import com.example.graduationproject.MainFragments.HomeFragment;
 import com.example.graduationproject.MainFragments.NewsFragment;
 import com.example.graduationproject.MainFragments.SearchFragment;
 import com.example.graduationproject.MainFragments.StudentProfileFragment;
+import com.example.graduationproject.Models.Student;
+import com.example.graduationproject.Others.StaticVar;
 import com.example.graduationproject.R;
 import com.example.graduationproject.SubFragments.ResultFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -27,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     SearchFragment searchFragment;
     NewsFragment newsFragment;
     ResultFragment resultFragment;
-
     private MeowBottomNavigation bnv_main;
+    List<Student> student_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +101,31 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         });
+
+
+        get_students_data();
+    }
+
+    private void get_students_data() {
+        /* TODO Get data from database */
+//        new Handler().postDelayed(() -> {
+            /* get all students in our database */
+            student_list.clear();
+            student_list.add(new Student("Mohammed Wael", "C1700832", 2.15f, "Computer science", "Fourth level", "English", 1500));
+            student_list.add(new Student("Mohammed Ibrahim", "C1700831", 3.15f, "Computer science", "Fourth level", "English", 2500));
+            /* detect current student by code */
+            detect_current_student();
+//        }, StaticVar.data_load_delay);
+    }
+
+    private void detect_current_student() {
+        for (int i = 0; i < student_list.size(); i++) {
+            if (student_list.get(i).getCode().toLowerCase().equals("C1700831".toLowerCase())) {
+                /* detected !! */
+                StaticVar.student = student_list.get(i);
+                return;
+            }
+        }
     }
 
     // Hide status app

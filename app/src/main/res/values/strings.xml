@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">GP</string>
     <string name="payment">Payment</string>
+    <string name="contact_us">Contact us</string>
+    <string name="nothing">Nothing</string>
+    <string name="events">Events</string>
+    <string name="lectures_this_day">Lectures this day</string>
+    <string name="welcome">Welcome, \</string>
+    <string name="lectures_tomorrow">Lectures tomorrow</string>
 
     <array name="sports">
         <item>Football</item>
@@ -23,6 +29,5 @@
         <item>Jumping</item>
         <item>Running</item>
     </array>
-
 
 </resources>

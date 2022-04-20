@@ -51,7 +51,8 @@ dependencies {
     // Custom NavigationDrawer
     implementation 'com.github.shrikanth7698:Custom-Navigation-Drawer:v0.0.1'
 
-
+    /* load images */
+    implementation 'com.github.bumptech.glide:glide:4.3.1'
 }
 
 
